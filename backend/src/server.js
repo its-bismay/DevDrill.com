@@ -9,6 +9,7 @@ import { functions, inngest } from "./lib/inngest.js";
 const app = express()
 
 app.use(express.json())
+app.use("/api/inngest", raw({ type: "*/*" }));
 app.use(cors({
     origin: ENV.CLIENT_URL,
     credentials: true
@@ -44,3 +45,4 @@ const startServer = async () => {
 }
 
 startServer()
+
