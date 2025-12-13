@@ -1,7 +1,5 @@
 import express from "express";
 import { ENV } from "./lib/env.js";
-import bodyParser from "body-parser";
-const { raw } = bodyParser;
 import { connectDB } from "./lib/db.js";
 import cors from "cors"
 import { serve } from "inngest/express"
@@ -11,7 +9,7 @@ import { functions, inngest } from "./lib/inngest.js";
 const app = express()
 
 app.use(express.json())
-app.use("/api/inngest", raw({ type: "*/*" }));
+
 app.use(cors({
     origin: ENV.CLIENT_URL,
     credentials: true
@@ -47,4 +45,5 @@ const startServer = async () => {
 }
 
 startServer()
+
 
