@@ -4,7 +4,7 @@ const userSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      reuired: true,
+      required: true,
     },
     email: {
       type: String,
@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema(
     },
     profileImage: {
       type: String,
-      dafault: "",
+      default: "",
     },
     clerkId: {
       type: String,

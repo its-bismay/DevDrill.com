@@ -4,7 +4,7 @@ import path from "path";
 import { connectDB } from "./lib/db.js";
 import cors from "cors"
 import { serve } from "inngest/express"
-import { functions, inngest } from "./lib/inggest.js";
+import { functions, inngest } from "./lib/inngest.js";
 
 const app = express()
 
