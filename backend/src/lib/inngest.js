@@ -6,7 +6,7 @@ export const inngest = new Inngest({id: "DevDrill"})
 
 const syncUser = inngest.createFunction(
     {id: "sync-user"},
-    {event: "clerk/user.created"},
+    {event: "webhook-integration/user.created"},
     async({event}) => {
         await connectDB()
 
@@ -26,7 +26,7 @@ const syncUser = inngest.createFunction(
 
 const deleteUserFromDb = inngest.createFunction(
     {id: "delete-user-from-database"},
-    {event: "clerk/user.deleted"},
+    {event: "webhook-integration/user.deleted"},
     async({event}) => {
 
         await connectDB()
