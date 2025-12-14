@@ -6,6 +6,7 @@ import cors from "cors"
 import { serve } from "inngest/express"
 import { functions, inngest } from "./lib/inngest.js";
 import chatRoutes from "./routes/chat.route.js"
+import sessionRoutes from "./routes/session.route.js"
 
 const app = express()
 
@@ -22,6 +23,7 @@ app.get("/health", (req, res) => {
 })
 
 app.use("/api/chat", chatRoutes)
+app.use("/api/session", sessionRoutes)
 
 // if(ENV.NODE_ENV == "production"){
 //     app.use(express.static(path.join(__dirname, "../frontend/dist")));
