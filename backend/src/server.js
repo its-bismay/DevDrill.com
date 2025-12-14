@@ -4,6 +4,7 @@ import { connectDB } from "./lib/db.js";
 import cors from "cors"
 import { serve } from "inngest/express"
 import { functions, inngest } from "./lib/inngest.js";
+import chatRoutes from "./routes/chat.route.js"
 
 
 const app = express()
@@ -21,9 +22,7 @@ app.get("/health", (req, res) => {
     res.status(200).json({message: "api is up and running"})
 })
 
-app.get("/books", (req, res) => {
-    res.status(200).json({message: "book endpoint is up and running"})
-})
+app.use("/api/chat", chatRoutes)
 
 // if(ENV.NODE_ENV == "production"){
 //     app.use(express.static(path.join(__dirname, "../frontend/dist")));
