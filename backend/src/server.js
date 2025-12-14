@@ -1,6 +1,5 @@
 import express from "express";
 import { ENV } from "./lib/env.js";
-import path from "path";
 import { connectDB } from "./lib/db.js";
 import cors from "cors"
 import { serve } from "inngest/express"
@@ -8,9 +7,11 @@ import { functions, inngest } from "./lib/inngest.js";
 import chatRoutes from "./routes/chat.route.js"
 import sessionRoutes from "./routes/session.route.js"
 
+
 const app = express()
 
 app.use(express.json())
+
 app.use(cors({
     origin: ENV.CLIENT_URL,
     credentials: true
@@ -45,3 +46,5 @@ const startServer = async () => {
 }
 
 startServer()
+
+
