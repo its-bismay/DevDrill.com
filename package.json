@@ -18,5 +18,7 @@
   "bugs": {
     "url": "https://github.com/its-bismay/DevDrill/issues"
   },
-  "homepage": "https://github.com/its-bismay/DevDrill#readme"
+  "homepage": "https://github.com/its-bismay/DevDrill#readme",
+  "dependencies": {
+  }
 }
