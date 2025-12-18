@@ -5,7 +5,7 @@ import ProblemPage from './pages/ProblemPage';
 import { Toaster } from 'react-hot-toast';
 import DashboardPage from './pages/DashboardPage';
 import ProblemDetailsPage from './pages/ProblemDetailsPage';
-import SessionPage from './pages/sessionPage';
+import SessionPage from './pages/SessionPage';
 
 function App() {
 
