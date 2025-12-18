@@ -1,12 +1,17 @@
 import {requireAuth} from "@clerk/express"
+import { ClerkExpressRequireAuth } from "@clerk/clerk-sdk-node";
 import User from "../models/User.model.js"
+import { ENV } from "../lib/env.js";
 
 
 export const protectRoute = [
-    requireAuth(),
+      ClerkExpressRequireAuth({
+    // allow requests from your frontend
+    authorizedParties: ENV.CLIENT_URL,
+  }),
     async (req, res, next) => {
         try {
-            const clerkId = req.auth().userId;
+            const clerkId = req.auth.userId;
             if(!clerkId) return res.status(401).json({message: "Unauthorized - invalid token"})
 
             const user = await User.findOne({clerkId})
